@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Fermenteria | Fermentare è un atto rivoluzionario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-[#f9faf7] text-[#004d41] overflow-x-hidden">
+
+    <canvas id="bubbleCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-7xl">
+        <div class="glass-panel py-4 px-8 flex justify-between items-center rounded-full border border-white/20 shadow-xl">
+            <div class="flex items-center gap-3">
+                <img src="logo.jpg" alt="La Fermenteria Logo" class="h-10 w-10 rounded-full shadow-md">
+                <span class="font-bold tracking-tighter text-xl hidden md:block">LA FERMENTERIA</span>
+            </div>
+            <div class="flex gap-6 items-center">
+                <a href="https://www.instagram.com/_lafermenteria_/" target="_blank" class="hover:scale-110 transition-transform">
+                    <i class="ph ph-instagram-logo text-2xl"></i>
+                </a>
+                <button class="bg-[#009B82] text-white px-6 py-2 rounded-full font-medium text-sm hover:bg-[#007a66] transition-colors">
+                    CONTATTACI
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-32 px-4 md:px-8 max-w-[1400px] mx-auto">
+        
+        <section class="min-h-[80dvh] grid grid-cols-1 md:grid-cols-12 gap-8 items-center mb-24">
+            <div class="md:col-span-7 reveal-text">
+                <h1 class="text-6xl md:text-8xl font-800 leading-[0.9] tracking-tighter mb-8">
+                    Fermentare è un <span class="text-[#009B82] italic">atto</span> <br> rivoluzionario.
+                </h1>
+                <p class="text-xl md:text-2xl leading-relaxed max-w-[50ch] text-slate-700">
+                    Ciao a tutti! Sono <strong>Michele</strong>, il fermentatore seriale dietro "La Fermenteria". Laureato in Enologia, esploro la magia della kombucha e dei processi naturali.
+                </p>
+            </div>
+            <div class="md:col-span-5 relative group">
+                <div class="hero-blob overflow-hidden aspect-square rounded-[3rem] shadow-2xl transition-transform duration-500 hover:rotate-2">
+                    <img src="images/logo2.jpg" alt="Logo La Fermenteria" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                <div class="absolute -bottom-6 -left-6 bg-[#FDB813] p-6 rounded-3xl shadow-lg rotate-[-5deg] reveal-card">
+                    <span class="font-bold text-lg italic">Artigianale al 100%</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-24">
+            <div class="md:col-span-2 bg-[#009B82] p-10 md:p-16 rounded-[3.5rem] text-white flex flex-col justify-center reveal-card">
+                <h2 class="text-4xl font-bold mb-6 tracking-tight">Il nostro laboratorio artigianale</h2>
+                <p class="text-lg opacity-90 leading-relaxed mb-8">
+                    Siamo la prima azienda produttrice di Kombucha in Romagna. Un laboratorio dedicato a creare Kombucha autentica, non pastorizzata e rifermentata naturalmente in bottiglia. In un mondo dove tutto è pastorizzato, noi andiamo contro corrente!
+                </p>
+                <div class="flex gap-4">
+                    <div class="h-1 w-20 bg-[#FDB813]"></div>
+                    <span class="font-medium tracking-widest uppercase text-xs">Romagna, Italia</span>
+                </div>
+            </div>
+            
+            <div class="bg-white p-10 rounded-[3.5rem] border border-slate-200 shadow-sm flex flex-col items-center text-center justify-center reveal-card" style="transition-delay: 200ms;">
+                <i class="ph ph-leaf text-6xl text-[#009B82] mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4">Cultura della Salute</h3>
+                <p class="text-slate-600">
+                    Insegno l'arte dell'autoproduzione per diffondere una salute consapevole e sostenibile.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-24 relative z-10">
+            <div class="mb-24 px-4 text-center reveal-text">
+                <h2 class="text-5xl md:text-7xl font-bold tracking-tighter mb-6">Le Nostre Creazioni.</h2>
+                <p class="text-xl text-slate-500">Autentiche, non pastorizzate, vive.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-32">
+                <div class="md:col-span-5 md:col-start-2 space-y-6 reveal-text">
+                    <div class="inline-block px-4 py-1 border border-[#009B82] rounded-full text-[#009B82] text-sm tracking-widest font-medium">01 &mdash; LA CLASSICA</div>
+                    <h3 class="text-4xl md:text-5xl font-bold tracking-tight">ORIGINAL</h3>
+                    <p class="text-slate-600 leading-relaxed text-lg">
+                        Lei, l'origine di tutto. Dove tutto è iniziato, dove ho perso l'anima per questo incredibile mondo delle fermentazioni; lei che mi ha fatto anche un po' dannare per trovare (e continuare a cercare!) il giusto equilibrio fra acidità, frizzantezza, delicatezza e corpo.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Lei, l'espressione di quello che per me è la Kombucha tradizionale ma in chiave moderna. Lei, che porta vita nei nostri intestini, ci tonifica nelle giornate più faticose o semplicemente ci dà la giusta frizzantezza per affrontare gli impegni quotidiani.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Sta bene da sola, quando si ha voglia di qualcosa da bere ma senza sapere bene cosa. Sta bene accanto a qualcosa da stuzzicare quando si ha voglia di un aperitivo senza pensieri, ma si trova a suo agio anche ad accompagnare piatti vegetali e orientali dando freschezza fra un boccone e l'altro. Lei, che ama molto anche la pizza! Insomma, sta bene un po' con tutto e un po' dappertutto!
+                    </p>
+                    <p class="font-medium text-[#004d41] mt-4">ORIGINAL, 100% Te Verde Gunpowder, naturalmente rifermentata in bottiglia, non filtrata e non pastorizzata.</p>
+                    <p class="italic text-slate-500">E tu l'hai mai provata la nostra Original?</p>
+                </div>
+                <div class="md:col-span-5 md:col-start-8 relative reveal-card group">
+                    <div class="aspect-[3/4] rounded-[3rem] overflow-hidden bg-slate-200 shadow-2xl relative">
+                        <img src="images/k2.jpg" alt="Kombucha Original" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-32">
+                <div class="md:col-span-5 md:col-start-1 order-2 md:order-1 relative reveal-card group">
+                    <div class="aspect-[4/5] rounded-[3rem] overflow-hidden bg-slate-200 shadow-2xl relative mt-8 md:mt-0">
+                        <img src="images/k1.jpg" alt="Kombucha Zenzero" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                </div>
+                <div class="md:col-span-5 md:col-start-7 order-1 md:order-2 space-y-6 reveal-text">
+                    <div class="inline-block px-4 py-1 border border-[#FDB813] rounded-full text-[#d4990d] text-sm tracking-widest font-medium">02 &mdash; LA PICCANTE</div>
+                    <h3 class="text-4xl md:text-5xl font-bold tracking-tight">ZENZERO</h3>
+                    <p class="text-slate-600 leading-relaxed text-lg">
+                        Lei, la seconda nata, quella che ti disseta nelle calde giornate estive e ti fa immaginare l'estate nelle lunghe giornate invernali. Briosa e piccantina, ogni sorso ne richiama un altro.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Il Tè verde Gunpowder Special incontra il succo di zenzero estratto a freddo. Le proprietà tonico-digestive dello zenzero, aumentate dalla fermentazione, la rendono eccezionale per aprire o accompagner un pasto.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Questa Kombucha richiama un viaggio in oriente, dalle spezie indiane al Pad Thai, da un fantastico riso saltato al kimchi fino ad arrivare al sushi giapponese.
+                    </p>
+                    <p class="italic text-slate-500 mt-4">Lo zenzero, o lo ami o lo odi. Tu da che parte stai?</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-32">
+                <div class="md:col-span-6 md:col-start-2 space-y-6 reveal-text">
+                    <div class="inline-block px-4 py-1 border border-rose-500 rounded-full text-rose-700 text-sm tracking-widest font-medium">03 &mdash; L'ESTROSA</div>
+                    <h3 class="text-4xl md:text-5xl font-bold tracking-tight">IBISCO</h3>
+                    <p class="text-slate-600 leading-relaxed text-lg">
+                        Lei, l'estrosa e l'appassionata, una combinazione vibrante che osa andare oltre il convenzionale. Di carattere spumoso e ribelle, incanta fin dal primo istante con la sua complessità floreale e minerale. Un percorso guidato dalla ricerca costante per esprimere tutto il proprio potenziale.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Il pregiato tè verde incontra un'intensa infusione di fiori di ibisco, regalando un colore profondo e sfumature uniche. Al naso svela un profilo inizialmente deciso, vinoso e ricco di sfumature lievitate che piano piano si aprono lasciando spazio a note fresche, floreali e sfumature pastello.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        La bocca è spumosa, salata e piacevolmente salivante, evocando l'anima vibrante e beverina di un grande lambrusco, ma sostenuta da un'acidità spinta e da una lieve, pulita astringenza finale tipica del tè verde. Un sorso estroso nato per stupire e accompagnare piatti creativi.
+                    </p>
+                    <p class="italic text-slate-500 mt-4">Un'attrice convincente sul tappeto rosso delle fermentazioni naturali. Tu sei pronto a scoprirla?</p>
+                </div>
+                <div class="md:col-span-4 md:col-start-9 relative reveal-card group">
+                    <div class="aspect-[3/4] rounded-full overflow-hidden bg-slate-200 shadow-xl relative translate-y-8">
+                        <img src="images/k3.jpg" alt="Kombucha Ibisco" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-center mb-16">
+                <div class="md:col-span-5 md:col-start-1 order-2 md:order-1 relative reveal-card group">
+                    <div class="aspect-[4/5] rounded-[2rem_4rem_2rem_5rem] overflow-hidden bg-slate-200 shadow-2xl relative mt-8 md:mt-0">
+                        <img src="images/k4.jpg" alt="Kombucha Bergamotto" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    </div>
+                </div>
+                <div class="md:col-span-5 md:col-start-7 order-1 md:order-2 space-y-6 reveal-text">
+                    <div class="inline-block px-4 py-1 border border-amber-500 rounded-full text-amber-700 text-sm tracking-widest font-medium">04 &mdash; L'ELEGANTE</div>
+                    <h3 class="text-4xl md:text-5xl font-bold tracking-tight">BERGAMOTTO</h3>
+                    <p class="text-slate-600 leading-relaxed text-lg">
+                        Lei, l'eleganza imbottigliata, quella che trasforma un momento di pausa nel rituale perfetto. Sofisticata e profumata, evoca l'atmosfera regale di un salotto d'altri tempi pur rimanendo profondamente moderna e ribelle. Briosa e intensamente agrumata, ogni sorso chiama quello successivo.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        Le note avvolgenti e profonde del tè Earl Grey incontrano la freschezza pungente del bergamotto, dando vita a un colore e a una densità unici che ricordano la rotondità dell'idromele.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed">
+                        La sua bocca spumosa, strutturata su un perfetto equilibrio tra acidità, sapidità e una lieve astringenza finale da tè nero, la rende eccezionale per ridefinire l'ora del tè o per accompagnare un pasto o un aperitivo estroso. Si trova a suo agio tra tramezzini sfiziosi e piccola pasticceria, regalando un finale pulito e piacevolmente amaricante.
+                    </p>
+                    <p class="italic text-slate-500 mt-4">Mancano solo i biscotti da inzuppare, al resto pensa lei. Tu hai già preparato la tazza?</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-[#f0f2ef] rounded-[4rem] p-8 md:p-20 mb-24 overflow-hidden relative">
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-5xl font-bold tracking-tighter mb-8">Una festa di batteri buoni!</h2>
+                    <p class="text-lg text-slate-700 leading-relaxed mb-6">
+                        Immagina la fermentazione come una festa dove batteri buoni, lieviti e microrganismi selvaggi si danno il cinque per trasformare ingredienti semplici in opere d'arte gustative! Questo processo magico, oltre a creare sapori unici e irresistibili, porta anche una miriade di benefici per il nostro corpo e la nostra salute.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 p-4 bg-white/50 rounded-2xl">
+                            <i class="ph ph-shield-check text-[#009B82] text-2xl"></i>
+                            <p class="text-sm">I prodotti fermentati sono come dei supereroi per la salute: ricchi di probiotici, enzimi e antiossidanti, sono un toccasana per il tuo sistema digestivo.</p>
+                        </div>
+                        <div class="flex items-start gap-4 p-4 bg-white/50 rounded-2xl">
+                            <i class="ph ph-heartbeat text-[#009B82] text-2xl"></i>
+                            <p class="text-sm">Fanno festa con il tuo palato, rinforzano in modo naturale il sistema immunitario e migliorano persino l'umore.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative reveal-card">
+                    <div class="aspect-[4/5] md:aspect-[3/4] max-w-md mx-auto rounded-[3.5rem] overflow-hidden bg-slate-200 shadow-2xl group">
+                        <img src="images/miki.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Michele - La Fermenteria">
+                    </div>
+                </div>
+            </div>
+            <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-[#009B82] opacity-5 blur-[100px] rounded-full"></div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#004d41] text-white py-20 px-8 rounded-t-[4rem]">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl md:text-6xl font-bold mb-8 tracking-tighter italic">Unisciti alla rivoluzione.</h2>
+            <p class="text-xl opacity-70 mb-12">Segui il viaggio mentre produciamo, esploriamo e assaggiamo.</p>
+            <div class="flex justify-center gap-8 mb-16">
+                <a href="#" class="text-3xl hover:text-[#FDB813] transition-colors"><i class="ph ph-instagram-logo"></i></a>
+                <a href="#" class="text-3xl hover:text-[#FDB813] transition-colors"><i class="ph ph-envelope"></i></a>
+                <a href="#" class="text-3xl hover:text-[#FDB813] transition-colors"><i class="ph ph-map-pin"></i></a>
+            </div>
+            <p class="text-xs opacity-40">© 2026 La Fermenteria</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
