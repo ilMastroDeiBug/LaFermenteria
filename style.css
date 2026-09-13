@@ -1,65 +1,451 @@
-/* Custom resets and Materiality */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
-    --accent: #FDB813;
-    --primary: #009B82;
+    --yellow: #FBC82F;
+    --yellow-bright: #FDCA31;
+    --red-product: #E53336;
+    --green: #00A584;
+    --lime: #B9CE00;
+    --light-blue: #ACEDFF;
+    --black: #000000;
+    --white: #FFFFFF;
+
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
 }
 
 body {
-    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-body);
+    background-color: #f5f5f5;
+    /* Grigio chiaro fuori dal wrapper */
+    color: var(--black);
+    display: flex;
+    justify-content: center;
+    /* Centra il sito su desktop */
 }
 
-/* Glassmorphism Refraction (Rule 4) */
-.glass-panel {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 
-        inset 0 1px 0 rgba(255,255,255,0.4),
-        0 20px 40px -15px rgba(0,77,65,0.15);
+/* 
+ * APP WRAPPER
+ * Limita la larghezza a 393px (dimensione iPhone classica) per garantire
+ * che le immagini assolute (che sono esportate a larghezze fisse) si sovrappongano
+ * perfettamente creando l'effetto collage esatto richiesto.
+ */
+.app-wrapper {
+    width: 100%;
+    max-width: 393px;
+    background-color: var(--white);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Custom Image Blobs (Variance 8) */
-.hero-blob {
-    clip-path: circle(70.7% at 50% 50%);
-    animation: blobMorph 10s infinite alternate-reverse ease-in-out;
+.bg-layer {
+    width: 100%;
+    display: block;
 }
 
-@keyframes blobMorph {
-    0% { clip-path: circle(70.7% at 50% 50%); border-radius: 3rem; }
-    33% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
-    66% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
-    100% { border-radius: 3rem; }
+/* --- HERO SECTION --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    /* Altezza basata approssimativamente sull'img */
+    padding-bottom: 20px;
+    z-index: 3;
 }
 
-/* Reveal Animations */
-.reveal-text, .reveal-card {
-    opacity: 0;
-    transform: translateY(30px);
+.hero-section .bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
 
-/* Typography Overrides (Rule 1) */
-h1, h2, h3 {
-    font-family: 'Outfit', sans-serif;
+/* --- TOP SOCIALS --- */
+.top-socials {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: flex;
+    gap: 12px;
+    z-index: 10;
 }
 
-/* Hide scrollbar for aesthetics */
-::-webkit-scrollbar {
-    width: 6px;
-}
-::-webkit-scrollbar-track {
-    background: #f9faf7;
-}
-::-webkit-scrollbar-thumb {
-    background: #009B82;
-    border-radius: 10px;
+.top-socials .social-icon {
+    width: 40px;
+    height: 40px;
 }
 
-/* Mobile optimizations (Rule 6) */
-@media (max-width: 768px) {
-    .hero-blob {
-        border-radius: 2rem;
-    }
-    h1 {
-        font-size: 3.5rem !important;
-    }
+.top-socials .social-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 60px 40px 180px 40px;
+    /* Spazio per non coprire il testo verde sotto */
+}
+
+.hero-logo {
+    width: 160px;
+    margin: 0 auto 120px auto;
+    display: block;
+}
+
+.hero-title-img {
+    width: 100%;
+    max-width: 320px;
+    display: block;
+    margin-top: 50px;
+}
+
+/* --- GREEN TRANSITION SECTION --- */
+.green-transition {
+    position: relative;
+    width: 100%;
+    margin-top: -120px;
+    /* Overlap the hero image curve */
+    z-index: 1;
+}
+
+.green-transition .bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.green-content {
+    position: relative;
+    z-index: 2;
+    padding: 180px 40px 100px 40px;
+}
+
+.pastorizzato-wrapper {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.text-pastorizzato {
+    width: 100%;
+    display: block;
+    transform: translateX(-15px);
+    /* Spostato leggermente a sinistra */
+}
+
+.star-large {
+    position: absolute;
+    top: -20px;
+    right: -10px;
+    width: 50px;
+}
+
+.intro-text {
+    color: var(--white);
+    font-size: 14px;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+/* --- LAB PHOTO SECTION --- */
+.lab-section {
+    position: relative;
+    width: 100%;
+    margin-top: -40px;
+    /* Ridotto il margine negativo per spostare la foto in basso */
+    z-index: 4;
+    /* Elevato lo z-index per stare in rilievo sulla sezione bianca */
+}
+
+.lab-section .bg-layer {
+    position: relative;
+    /* Spinge il contenitore verso il basso ma mantiene lo sfondo */
+    z-index: 1;
+    transform: scaleX(-1);
+    /* Specchia l'immagine orizzontalmente */
+}
+
+.lab-content {
+    position: absolute;
+    bottom: -80px;
+    /* Lo spinge fuori dall'immagine verso il basso */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    z-index: 2;
+}
+
+.lab-card {
+    position: relative;
+}
+
+.lab-card-bg {
+    width: 100%;
+    display: block;
+}
+
+.lab-card-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 35px 30px;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lab-card-text h2 {
+    font-family: var(--font-heading);
+    font-size: 30px;
+    line-height: 1;
+    margin-bottom: 20px;
+}
+
+.lab-card-text p {
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+/* --- PRODUCTS SECTION --- */
+.products-section {
+    padding: 160px 0 20px 0;
+    /* Aumentato il padding per far spazio al quadrante in rilievo */
+    text-align: center;
+    background: var(--white);
+    position: relative;
+    z-index: 3;
+    margin-top: -20px;
+}
+
+.products-header {
+    margin-bottom: 120px;
+    /* Spazio per il bollino RAW */
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.products-header h2 {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.products-header p {
+    font-size: 14px;
+}
+
+.raw-stamp {
+    position: absolute;
+    right: 5px;
+    top: 70px;
+    /* Abbassato per non coprire il testo "Autentiche..." e metterlo vicino al collo della prima bottiglia */
+    width: 80px;
+    z-index: 5;
+}
+
+.product-svg {
+    width: 100%;
+    display: block;
+    transform: translateX(15px);
+    /* Sposta a destra per bilanciare l'immagine e centrarla */
+    margin-bottom: 40px;
+    /* Spazio verticale identico fra una bottiglia e l'altra */
+}
+
+
+/* --- BENEFITS SECTION --- */
+.benefits-section {
+    position: relative;
+    background-color: var(--white);
+    z-index: 2;
+    padding-top: 100px;
+}
+
+.benefits-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    /* Mostra l'intera immagine senza tagliarla/zoomarla */
+    z-index: 1;
+}
+
+.bottle-inclined {
+    position: absolute;
+    top: 10px;
+    /* Spostata più in giù */
+    right: -25px;
+    width: 150px;
+    z-index: 4;
+}
+
+.benefits-content {
+    position: relative;
+    z-index: 3;
+    padding: 110px 40px 250px 40px;
+    /* Molto padding in basso per "allungare" la porzione di giallo e farci rientrare il testo */
+}
+
+.benefits-header {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.benefits-header h2 {
+    font-family: var(--font-heading);
+    font-size: 40px;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    font-weight: 800;
+    width: 90%;
+    /* Allargato per ridurre gli a capo */
+}
+
+.stars-icon-title {
+    position: absolute;
+    top: -35px;
+    /* Spostate leggermente più in alto */
+    right: 40px;
+    width: 100px;
+    z-index: 2;
+}
+
+.benefits-content .intro {
+    font-size: 15px;
+    line-height: 1.3;
+    font-weight: 500;
+    margin-bottom: 20px;
+    width: 100%;
+    /* Larghezza massima, gli a capo sono manuali */
+}
+
+.benefits-content .intro-sub {
+    font-size: 15px;
+    line-height: 1.3;
+    font-weight: 500;
+    margin-bottom: 25px;
+    /* Compattato per rientrare nel giallo */
+    width: 100%;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+    /* Compattato lo spazio fra le icone */
+}
+
+.benefit-item .icon {
+    width: 35px;
+    flex-shrink: 0;
+}
+
+.benefit-item .icon-leaf {
+    width: 30px;
+}
+
+.benefit-item p {
+    font-size: 15px;
+    line-height: 1.25;
+    font-weight: 500;
+}
+
+
+/* --- FOOTER SECTION --- */
+.footer-section {
+    position: relative;
+    margin-top: -160px;
+    /* Tirato su per coprire lo spazio vuoto in eccesso e attaccarsi al giallo, senza coprire i testi */
+    z-index: 4;
+}
+
+.footer-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.footer-content {
+    position: relative;
+    z-index: 2;
+    padding: 160px 40px 80px 40px;
+    text-align: center;
+    color: var(--white);
+}
+
+.footer-logo {
+    width: 120px;
+    margin: 0 auto 40px auto;
+}
+
+.footer-content h2 {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--white);
+    border-radius: 12px;
+    color: var(--white);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--white);
+    color: var(--green);
+}
+
+.footer-contacts {
+    margin-top: 30px;
+    font-size: 14px;
+    color: var(--white);
+}
+
+.footer-contacts a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.footer-contacts a:hover {
+    text-decoration: underline;
+}
+
+.copyright {
+    margin-top: 15px;
+    font-size: 11px;
+    opacity: 0.7;
 }

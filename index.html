@@ -1,222 +1,176 @@
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Fermenteria | Fermentare è un atto rivoluzionario</title>
-    <link id="favicon" rel="icon" type="image/jpeg" href="logo.jpg">
+    <title>La Fermenteria - Kombucha Artigianale</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="nuove/logoLaFermenteriaScrittaDaMettereSoloNelPallinoPerLaRicercaGoogle.svg">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-[#f9faf7] text-[#004d41] overflow-x-hidden">
 
-    <canvas id="bubbleCanvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
+<body>
 
-    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[95%] md:w-[90%] max-w-7xl">
-        <div class="glass-panel py-3 md:py-4 px-6 md:px-8 flex justify-between items-center rounded-full border border-white/20 shadow-xl">
-            <div class="flex items-center gap-3">
-                <img src="logo.jpg" alt="La Fermenteria Logo" class="h-8 w-8 md:h-10 md:w-10 rounded-full shadow-md">
-                <span class="font-bold tracking-tighter text-lg md:text-xl hidden sm:block">LA FERMENTERIA</span>
-            </div>
-            <div class="flex gap-4 md:gap-6 items-center">
-                <a href="https://www.instagram.com/_lafermenteria_/" target="_blank" class="hover:scale-110 transition-transform">
-                    <i class="ph ph-instagram-logo text-xl md:text-2xl"></i>
+    <!-- Contenitore principale bloccato alla larghezza del design mobile (393px) per garantire proporzioni perfette come su Figma -->
+    <div class="app-wrapper">
+
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+            <!-- Contatti in alto a destra -->
+            <div class="top-socials">
+                <a href="https://www.instagram.com/_lafermenteria_/" target="_blank" class="social-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                 </a>
-                <a href="https://www.facebook.com/p/La-Fermenteria-61558367436555/" target="_blank" class="hover:scale-110 transition-transform">
-                    <i class="ph ph-facebook-logo text-xl md:text-2xl"></i>
+                <a href="https://www.facebook.com/p/La-Fermenteria-61558367436555/" target="_blank" class="social-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                 </a>
-                <a href="mailto:lafermenteria24@gmail.com" class="hover:scale-110 transition-transform">
-                    <i class="ph ph-envelope text-xl md:text-2xl"></i>
-                </a>
-                <a href="tel:+393400560816" class="bg-[#009B82] text-white px-5 py-2 md:px-6 md:py-2 rounded-full font-medium text-xs md:text-sm hover:bg-[#007a66] transition-colors inline-block text-center">
-                    CONTATTACI
+                <a href="mailto:lafermenteria24@gmail.com" class="social-icon">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                 </a>
             </div>
-        </div>
-    </nav>
 
-    <main class="relative z-10 pt-32 px-4 md:px-8 max-w-[1400px] mx-auto">
-        
-        <section class="min-h-[80dvh] grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center mb-16 md:mb-24 pt-6 md:pt-0">
-            <div class="md:col-span-7 reveal-text text-center md:text-left">
-                <h1 class="text-5xl sm:text-6xl md:text-8xl font-800 leading-[0.9] tracking-tighter mb-6 md:mb-8">
-                    Fermentare è un <span class="text-[#009B82] italic">atto</span> <br> rivoluzionario.
-                </h1>
-                <p class="text-lg md:text-2xl leading-relaxed max-w-[50ch] mx-auto md:mx-0 text-slate-700">
-                    Ciao a tutti! Sono <strong>Michele</strong>, il fermentatore seriale dietro "La Fermenteria". Laureato in Enologia, esploro la magia della kombucha e dei processi naturali.
-                </p>
+            <img src="nuove/primaImmagineSfondo.svg" class="bg-layer" alt="Background Hero">
+
+            <div class="hero-content">
+                <img src="nuove/logoConScrittaDaMettereNellaPrimaImmagineComeDaDisposizione.svg" class="hero-logo"
+                    alt="La Fermenteria - Natura in Movimento">
+
+                <img src="nuove/scrittafermentareèunattorivoluzionario.svg" class="hero-title-img"
+                    alt="Fermentare è un atto rivoluzionario">
             </div>
-            <div class="md:col-span-5 relative group max-w-[280px] sm:max-w-sm mx-auto md:max-w-none w-full mt-8 md:mt-0">
-                <div class="hero-blob overflow-hidden aspect-square rounded-[3rem] shadow-2xl transition-transform duration-500 hover:rotate-2">
-                    <img src="images/logo2.jpg" alt="Logo La Fermenteria" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                </div>
-                <div class="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 bg-[#FDB813] p-4 md:p-6 rounded-3xl shadow-lg rotate-[-5deg] reveal-card">
-                    <span class="font-bold text-sm md:text-lg italic">Artigianale al 100%</span>
+        </section>
+
+        <!-- GREEN TRANSITION SECTION -->
+        <section class="green-transition">
+            <img src="nuove/sfondoVerdeCheVaIncastratoFraLaPrimaELaSecondaImmagineDiSfondoPerFareEffettoOndulato.svg"
+                class="bg-layer" alt="Green Background">
+
+            <div class="green-content">
+                <div class="pastorizzato-wrapper">
+                    <!-- Utilizzo dell'SVG per la scritta evidenziata -->
+                    <img src="nuove/scrittapastorizzatochevanellosfondoverdefraprimaesecondaimmagine.svg"
+                        class="text-pastorizzato"
+                        alt="In un mondo dove tutto è pastorizzato noi andiamo contro corrente">
                 </div>
             </div>
         </section>
 
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16 md:mb-24">
-            <div class="md:col-span-2 bg-[#009B82] p-8 md:p-16 rounded-[2.5rem] md:rounded-[3.5rem] text-white flex flex-col justify-center reveal-card">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 md:mb-6 tracking-tight">Il nostro laboratorio artigianale</h2>
-                <p class="text-base md:text-lg opacity-90 leading-relaxed mb-6 md:mb-8">
-                    Siamo la prima azienda produttrice di Kombucha in Romagna. Un laboratorio dedicato a creare Kombucha autentica, non pastorizzata e rifermentata naturalmente in bottiglia. In un mondo dove tutto è pastorizzato, noi andiamo contro corrente!
-                </p>
-                <div class="flex gap-4 items-center">
-                    <div class="h-1 w-12 md:w-20 bg-[#FDB813]"></div>
-                    <span class="font-medium tracking-widest uppercase text-xs">Romagna, Italia</span>
-                </div>
-            </div>
-            
-            <div class="bg-white p-8 md:p-10 rounded-[2.5rem] md:rounded-[3.5rem] border border-slate-200 shadow-sm flex flex-col items-center text-center justify-center reveal-card" style="transition-delay: 200ms;">
-                <i class="ph ph-leaf text-5xl md:text-6xl text-[#009B82] mb-4 md:mb-6"></i>
-                <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4">Cultura della Salute</h3>
-                <p class="text-sm md:text-base text-slate-600">
-                    Insegno l'arte dell'autoproduzione per diffondere una salute consapevole e sostenibile.
-                </p>
-            </div>
-        </section>
+        <!-- LAB PHOTO SECTION -->
+        <section class="lab-section">
+            <img src="nuove/secondaImmagine.svg" class="bg-layer" alt="Ragazzo che beve Kombucha">
 
-        <section class="py-12 md:py-24 relative z-10">
-            <div class="mb-12 md:mb-24 px-4 text-center reveal-text">
-                <h2 class="text-4xl md:text-7xl font-bold tracking-tighter mb-4 md:mb-6">Le Nostre Creazioni.</h2>
-                <p class="text-lg md:text-xl text-slate-500">Autentiche, non pastorizzate, vive.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center mb-20 md:mb-32">
-                <div class="md:col-span-5 md:col-start-2 space-y-4 md:space-y-6 reveal-text">
-                    <div class="inline-block px-3 py-1 border border-[#009B82] rounded-full text-[#009B82] text-xs md:text-sm tracking-widest font-medium uppercase">01 &mdash; La freschezza più pura</div>
-                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight">ORIGINAL</h3>
-                    <p class="font-bold text-[#009B82] text-lg uppercase tracking-wide">Autentica, leggera, naturale</p>
-                    <p class="text-slate-600 leading-relaxed text-base md:text-lg">
-                        Un sorso limpido e intenso, che sa di natura. Il gusto originale della Kombucha, erbaceo, fresco e dissetante come una bevanda rigenerante. Il delicato equilibrio fra "sweet and sour", unito alla sua effervescenza, la rende perfetta per ogni momento della giornata.
-                    </p>
-                    <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100 mt-4">
-                        <p class="text-sm md:text-base text-slate-700">
-                            <strong>Ingredienti:</strong> Acqua, coltura starter di Kombucha, zucchero italiano, 100% Tè Verde Gunpowder Special.
-                        </p>
-                    </div>
-                </div>
-                <div class="md:col-span-5 md:col-start-8 relative reveal-card group max-w-[280px] sm:max-w-sm mx-auto md:max-w-none w-full mt-6 md:mt-0">
-                    <div class="aspect-[3/4] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden bg-slate-200 shadow-2xl relative">
-                        <img src="images/k2.jpg" alt="Kombucha Original" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center mb-20 md:mb-32">
-                <div class="md:col-span-5 md:col-start-1 order-2 md:order-1 relative reveal-card group max-w-[280px] sm:max-w-sm mx-auto md:max-w-none w-full mt-6 md:mt-0">
-                    <div class="aspect-[4/5] rounded-[2.5rem] md:rounded-[3rem] overflow-hidden bg-slate-200 shadow-2xl relative">
-                        <img src="images/k1.jpg" alt="Kombucha Zenzero" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="md:col-span-5 md:col-start-7 order-1 md:order-2 space-y-4 md:space-y-6 reveal-text">
-                    <div class="inline-block px-3 py-1 border border-[#FDB813] rounded-full text-[#d4990d] text-xs md:text-sm tracking-widest font-medium uppercase">02 &mdash; L'energia che cercavi</div>
-                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight">ZENZERO</h3>
-                    <p class="font-bold text-[#d4990d] text-lg uppercase tracking-wide">Speziata, vivace, stimolante</p>
-                    <p class="text-slate-600 leading-relaxed text-base md:text-lg">
-                        Una frizzante carezza che rinfresca e deterge allo stesso tempo. Lo zenzero dà sprint e vitalità, per chi cerca energia in ogni sorso. Perfetta in aperitivo o da abbinare ai formaggi per pulire il palato ad ogni sorso.
-                    </p>
-                    <div class="bg-amber-50 p-4 rounded-xl border border-amber-100 mt-4">
-                        <p class="text-sm md:text-base text-slate-700">
-                            <strong>Ingredienti:</strong> Acqua, coltura starter di Kombucha, zucchero italiano, 100% Tè Verde Gunpowder Special, succo di zenzero estratto a freddo.
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center mb-20 md:mb-32">
-                <div class="md:col-span-6 md:col-start-2 space-y-4 md:space-y-6 reveal-text">
-                    <div class="inline-block px-3 py-1 border border-rose-500 rounded-full text-rose-700 text-xs md:text-sm tracking-widest font-medium uppercase">03 &mdash; Il colore che conquista</div>
-                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight">IBISCO</h3>
-                    <p class="font-bold text-rose-700 text-lg uppercase tracking-wide">Floreale, intensa, elegante</p>
-                    <p class="text-slate-600 leading-relaxed text-base md:text-lg">
-                        Rosso vivace, profumo di fiori, frutti rossi e una nota leggermente acidula. Perfetta per aprire il palato. L'Ibisco Egiziano regala un'esperienza elegante e sorprendente, che sboccia in bocca.
-                    </p>
-                    <div class="bg-rose-50 p-4 rounded-xl border border-rose-100 mt-4">
-                        <p class="text-sm md:text-base text-slate-700">
-                            <strong>Ingredienti:</strong> Acqua, coltura starter di Kombucha, zucchero italiano, Fiori di ibisco egiziano, Tè Verde Gunpowder Special.
-                        </p>
-                    </div>
-                </div>
-                <div class="md:col-span-4 md:col-start-9 relative reveal-card group max-w-[280px] sm:max-w-sm mx-auto md:max-w-none w-full mt-6 md:mt-0">
-                    <div class="aspect-[3/4] rounded-full overflow-hidden bg-slate-200 shadow-xl relative translate-y-0 md:translate-y-8">
-                        <img src="images/k3.jpg" alt="Kombucha Ibisco" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center mb-16 md:mb-16">
-                <div class="md:col-span-5 md:col-start-1 order-2 md:order-1 relative reveal-card group max-w-[280px] sm:max-w-sm mx-auto md:max-w-none w-full mt-6 md:mt-0">
-                    <div class="aspect-[4/5] rounded-[2rem_3rem_2rem_4rem] md:rounded-[2rem_4rem_2rem_5rem] overflow-hidden bg-slate-200 shadow-2xl relative">
-                        <img src="images/k4.jpg" alt="Kombucha Bergamotto" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
-                    </div>
-                </div>
-                <div class="md:col-span-5 md:col-start-7 order-1 md:order-2 space-y-4 md:space-y-6 reveal-text">
-                    <div class="inline-block px-3 py-1 border border-amber-500 rounded-full text-amber-700 text-xs md:text-sm tracking-widest font-medium uppercase">04 &mdash; L'eleganza al sorso</div>
-                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight">BERGAMOTTO</h3>
-                    <p class="font-bold text-amber-700 text-lg uppercase tracking-wide">Agrumata, raffinata, decisa</p>
-                    <p class="text-slate-600 leading-relaxed text-base md:text-lg">
-                        L'intensità del tè nero si intreccia con le note fresche e aromatiche del bergamotto. Un gusto elegante, ma dal carattere deciso, che lascia una scia di freschezza profonda e agrumata perfetta per le calde serate estive.
-                    </p>
-                    <div class="bg-amber-50 p-4 rounded-xl border border-amber-100 mt-4">
-                        <p class="text-sm md:text-base text-slate-700">
-                            <strong>Ingredienti:</strong> Acqua, coltura starter di Kombucha, zucchero italiano, Tè Nero al Bergamotto.
-                        </p>
-                    </div>
+            <div class="lab-content">
+                <div class="lab-card">
+                    <img src="nuove/quadranteverdechevacentratoallasecondaimmagineintendoorizzontalmente(vediDisposizioniNelleFotoPrima)perlascrittailnostrolaboratorioartigianale.svg"
+                        class="lab-card-bg" alt="Sfondo verde laboratorio">
                 </div>
             </div>
         </section>
 
-        <section class="bg-[#f0f2ef] rounded-[2.5rem] md:rounded-[4rem] p-6 md:p-20 mb-16 md:mb-24 overflow-hidden relative">
-            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
-                <div>
-                    <h2 class="text-4xl md:text-5xl font-bold tracking-tighter mb-6 md:mb-8">Una festa di batteri buoni!</h2>
-                    <p class="text-base md:text-lg text-slate-700 leading-relaxed mb-6">
-                        Immagina la fermentazione come una festa dove batteri buoni, lieviti e microrganismi selvaggi si danno il cinque per trasformare ingredienti semplici in opere d'arte gustative! Questo processo magico, oltre a creare sapori unici e irresistibili, porta anche una miriade di benefici per il nostro corpo e la nostra salute.
-                    </p>
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-4 p-4 bg-white/50 rounded-2xl">
-                            <i class="ph ph-shield-check text-[#009B82] text-2xl"></i>
-                            <p class="text-xs md:text-sm">I prodotti fermentati sono come dei supereroi per la salute: ricchi di probiotici, enzimi e antiossidanti, sono un toccasana per il tuo sistema digestivo.</p>
-                        </div>
-                        <div class="flex items-start gap-4 p-4 bg-white/50 rounded-2xl">
-                            <i class="ph ph-heartbeat text-[#009B82] text-2xl"></i>
-                            <p class="text-xs md:text-sm">Fanno festa con il tuo palato, rinforzano in modo naturale il sistema immunitario e migliorano persino l'umore.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="relative reveal-card max-w-[280px] sm:max-w-sm md:max-w-md mx-auto w-full mt-4 md:mt-0">
-                    <div class="aspect-[4/5] md:aspect-[3/4] rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden bg-slate-200 shadow-2xl group">
-                        <img src="images/miki.jpg" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Michele - La Fermenteria">
-                    </div>
-                </div>
+        <!-- PRODUCTS SECTION -->
+        <section class="products-section">
+            <div class="products-header">
+                <h2>Le nostre creazioni.</h2>
+                <p>Autentiche, non pastorizzate, vive.</p>
+                <img src="nuove/simboloRAWperbotttigliaoriginal.svg" class="raw-stamp" alt="RAW stamp">
             </div>
-            <div class="absolute -right-10 -bottom-10 md:-right-20 md:-bottom-20 w-64 md:w-96 h-64 md:h-96 bg-[#009B82] opacity-5 blur-[80px] md:blur-[100px] rounded-full"></div>
+
+            <!-- Prodotti SVGs (contengono già bottiglia, sfondo e testi) -->
+            <img src="nuove/bottigliaoriginal.svg" class="product-svg" alt="Kombucha Original">
+            <img src="nuove/bottigliazenzero.svg" class="product-svg" alt="Kombucha Zenzero">
+            <img src="nuove/bottigliaibisco.svg" class="product-svg" alt="Kombucha Ibisco">
+            <img src="nuove/bottigliabergamotto.svg" class="product-svg" alt="Kombucha Bergamotto">
         </section>
 
-    </main>
+        <!-- BENEFITS SECTION -->
+        <section class="benefits-section">
+            <img src="nuove/unafestadibatteribuonisfondo.svg" class="bg-layer benefits-bg"
+                alt="Sfondo giallo ondeggiante">
+            <img src="nuove/bottigliabergamottodamettereinclinatavicinoaunafestadibatteribuoni.svg"
+                class="bottle-inclined" alt="Bottiglia inclinata">
 
-    <footer class="bg-[#004d41] text-white py-12 md:py-20 px-6 md:px-8 rounded-t-[3rem] md:rounded-t-[4rem]">
-        <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-3xl md:text-6xl font-bold mb-6 md:mb-8 tracking-tighter italic">Unisciti alla rivoluzione.</h2>
-            <p class="text-base md:text-xl opacity-70 mb-10 md:mb-12">Segui il viaggio mentre produciamo, esploriamo e assaggiamo.</p>
-            <div class="flex justify-center gap-6 md:gap-8 mb-12 md:mb-16">
-                <a href="https://www.instagram.com/_lafermenteria_/" target="_blank" class="text-2xl md:text-3xl hover:text-[#FDB813] transition-colors"><i class="ph ph-instagram-logo"></i></a>
-                <a href="https://www.facebook.com/p/La-Fermenteria-61558367436555/" target="_blank" class="text-2xl md:text-3xl hover:text-[#FDB813] transition-colors"><i class="ph ph-facebook-logo"></i></a>
-                <a href="mailto:lafermenteria24@gmail.com" class="text-2xl md:text-3xl hover:text-[#FDB813] transition-colors"><i class="ph ph-envelope"></i></a>
-                <a href="#" class="text-2xl md:text-3xl hover:text-[#FDB813] transition-colors"><i class="ph ph-map-pin"></i></a>
+            <div class="benefits-content">
+                <div class="benefits-header">
+                    <h2>Una festa<br>di batteri<br>buoni!</h2>
+                    <img src="nuove/simbolostelline.svg" class="stars-icon-title" alt="Stars">
+                </div>
+
+                <p class="intro">Immagina la fermentazione come<br>una festa dove batteri buoni, lieviti<br>e microrganismi selvaggi si danno<br>il cinque per trasformare ingredienti<br>semplici in <strong>opere d'arte gustative!</strong></p>
+                <p class="intro-sub">Questo processo magico, oltre a<br>creare sapori unici e irresistibili, porta<br>anche una miriade di benefici per il<br>nostro corpo e la nostra salute.</p>
+
+                <div class="benefit-item">
+                    <img src="nuove/simbolostelline.svg" class="icon" alt="Stelline">
+                    <p>I prodotti fermentati sono come dei <strong>supereroi</strong> per la salute: ricchi di
+                        probiotici, enzimi e antiossidanti, sono un toccasana per il tuo sistema digestivo.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <img src="nuove/foglia.svg" class="icon icon-leaf" alt="Foglia">
+                    <p>Fanno festa con il tuo palato, rinforzano in modo naturale il <strong>sistema
+                            immunitario</strong> e migliorano persino l'umore.</p>
+                </div>
             </div>
-            <p class="text-xs opacity-40">© 2026 La Fermenteria - Tutti i diritti riservati</p>
-        </div>
-    </footer>
+        </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <!-- FOOTER SECTION -->
+        <section class="footer-section">
+            <img src="nuove/finedelsitouniscitiallarivoluzione.svg" class="bg-layer footer-bg"
+                alt="Sfondo verde onda finale">
+
+            <div class="footer-content">
+                <img src="nuove/logoConScrittaDaMettereNellaPrimaImmagineComeDaDisposizione.svg" class="footer-logo"
+                    alt="La Fermenteria Logo">
+
+                <h2>Unisciti alla<br>rivoluzione.</h2>
+                <p>Segui il viaggio mentre produciamo,<br>esploriamo e assaggiamo.</p>
+
+                <div class="socials">
+                    <a href="https://www.instagram.com/_lafermenteria_/" target="_blank" class="social-icon">
+                        <!-- Instagram Icon -->
+                        <svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/p/La-Fermenteria-61558367436555/" target="_blank" class="social-icon">
+                        <!-- Facebook Icon -->
+                        <svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="mailto:lafermenteria24@gmail.com" class="social-icon">
+                        <!-- Mail Icon -->
+                        <svg viewBox="0 0 24 24" width="30" height="30" stroke="currentColor" stroke-width="2"
+                            fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="footer-contacts">
+                    <p>Tel: <a href="tel:+393400560816">340 056 0816</a></p>
+                    <p class="copyright">&copy; 2026 La Fermenteria.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
     <script src="script.js"></script>
 </body>
+
 </html>
